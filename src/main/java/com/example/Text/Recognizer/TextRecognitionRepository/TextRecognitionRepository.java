@@ -1,6 +1,7 @@
 package com.example.Text.Recognizer.TextRecognitionRepository;
 
 import ai.djl.MalformedModelException;
+import ai.djl.Model;
 import ai.djl.modality.Classifications;
 import ai.djl.modality.cv.translator.ImageClassificationTranslator;
 import ai.djl.repository.zoo.Criteria;
@@ -26,6 +27,8 @@ public class TextRecognitionRepository {
     public PretrainedModel loadModel() throws IOException {
         // Download the pre-trained model.
         PretrainedModel model = modelZoo.loadModel("PaddleOCR");
+
+       // Model model = Model.load(PaddleOCR);  To load Local pre trained Model
 
         return model;
     }
